@@ -1,0 +1,9 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="userName">
+  <button type="submit">Search</button>
+</form>
+
+<span>Total Result: {{totalResult}}</span>
+
+
+<app-user-template [userDetail]="userDetail"></app-user-template>

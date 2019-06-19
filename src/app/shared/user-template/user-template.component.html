@@ -1,0 +1,25 @@
+<div class="row" *ngFor="let userInfo of userDetail;">
+  <div class="col-lg-8">
+    <div class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object dp img-circle" src="{{userInfo.avatar_url}}" style="width: 100px;height:100px;">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">{{userInfo.login}}</h4>
+        <h5>Profile URL: <span>{{userInfo.html_url}}</span></h5>
+        <hr style="margin:8px auto">
+        <h6>Data One: Value One</h6>
+        <h6>Data Two: Value Two</h6>
+        <button (click)="getRepoDetails(userInfo.login)">Details</button>
+        <table *ngIf="showRepoDetail" class="table table-striped">
+          <tbody>
+            <tr *ngFor="let repo of repoList">
+              <td>{{repo.name}}</td>
+              <td>{{repo.description}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
