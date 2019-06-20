@@ -1,9 +1,12 @@
-<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-  <input type="text" formControlName="userName">
-  <button type="submit">Search</button>
-</form>
-
-<span>Total Result: {{totalResult}}</span>
-
-
-<app-user-template [userDetail]="userDetail"></app-user-template>
+<div class="container">
+  <div class="search">
+    <div class="input-group" [formGroup]="searchForm" id="frmgrp">
+      <input type="text"  formControlName="userName" class="form-control"  placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-search"  (click)="onSubmit()"type="submit"><i class="fa fa-search fa-fw"></i> </button>
+          </span>
+    </div>
+    </div>
+    <app-user-template [userDetail]="userDetail"></app-user-template>
+  </div>
+   

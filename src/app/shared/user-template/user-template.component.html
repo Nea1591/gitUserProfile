@@ -10,8 +10,8 @@
         <hr style="margin:8px auto">
         <h6>Data One: Value One</h6>
         <h6>Data Two: Value Two</h6>
-        <button (click)="getRepoDetails(userInfo.login, i)">Details</button>
-        <table *ngIf="showRepoDetail== i" class="table table-striped">
+        <button (click)="getRepoDetails(userInfo.login, i)">{{buttonname}}</button>
+        <table *ngIf="showRepoDetail== i && isExpand" class="table table-striped">
           <tbody>
             <tr *ngFor="let repo of repoList">
               <td>{{repo.name}}</td>
