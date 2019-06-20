@@ -15,7 +15,7 @@ export class UserTemplateComponent implements OnInit {
   }
 
   getRepoDetails(users: any, index: boolean) {
-    this.showRepoDetail = true;
+    this.showRepoDetail = index;
     this.userSearchService.getRepoDetails(users).subscribe(result => {
       this.repoList = result;
     });
