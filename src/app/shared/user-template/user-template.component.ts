@@ -10,23 +10,28 @@ export class UserTemplateComponent implements OnInit {
   buttonname = "Details";
   isExpand: boolean;
   repoList: any;
-  constructor(private userSearchService: GitUserSearchService) { }
+  constructor(private userSearchService: GitUserSearchService) { 
+  }
   @Input() userDetail: any;
+  config: any;
   ngOnInit() {
+    this.config = {
+      itemsPerPage: 5,
+      currentPage: 1,
+      totalItems: 30//this.userDetail.length
+    };
   }
 
   getRepoDetails(users: any, index: boolean) {
     this.isExpand = !this.isExpand;
-    if(this.isExpand){
-      this.buttonname = "Collapse";
-    } else{
-      this.buttonname = "Details";
-    }
-    
     this.userSearchService.getRepoDetails(users).subscribe(result => {
       this.repoList = result;
       this.showRepoDetail = index;
     });
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
   }
 
 }

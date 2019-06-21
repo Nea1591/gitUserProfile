@@ -19,6 +19,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     HttpClientModule,
     SharedModule,
     AngularFontAwesomeModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

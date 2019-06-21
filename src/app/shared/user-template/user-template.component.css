@@ -23,6 +23,13 @@ button {
     float: right
 }
 .row {
-    background-color: aliceblue;
+    background-color: #fff;
     margin-bottom: 20px;
+    margin-right: -15px;
+    margin-left: 81px;
+    width: 80%;
+    margin-top: 49px;
+}
+.right-align {
+    float: right;
 }

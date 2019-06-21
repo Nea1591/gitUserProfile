@@ -21,7 +21,6 @@ export class SearchUserComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.searchForm.value);
     let user = this.searchForm.value;
     this.gitSearch.getUser(user.userName).subscribe(result => {
       this.userDetail = result['items'];
