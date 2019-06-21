@@ -11,7 +11,7 @@ export class SearchUserComponent implements OnInit {
   searchForm: FormGroup;
   userDetail: string;
   totalResult: number;
-
+  showcount = false;
   constructor(private gitSearch: GitUserSearchService) { }
 
   ngOnInit() {
@@ -22,6 +22,7 @@ export class SearchUserComponent implements OnInit {
 
   onSubmit() {
     let user = this.searchForm.value;
+    this.showcount = true;
     this.gitSearch.getUser(user.userName).subscribe(result => {
       this.userDetail = result['items'];
       this.totalResult = result['items'].length;

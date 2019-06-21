@@ -1,7 +1,5 @@
 .media
 {
-    /* box-shadow:0p
-    x 0px 4px -2px #000; */
     margin: 20px 0;
     padding:30px;
     width: 90rem;
@@ -17,7 +15,6 @@
     transform:rotate(360deg);
     -ms-transform:rotate(360deg);  
     -webkit-transform:rotate(360deg);  
-    /* webkit-font-smoothing:antialiased; */
 }
 button {
     float: right
@@ -32,4 +29,8 @@ button {
 }
 .right-align {
     float: right;
+}
+
+h5, h6, h4 {
+    font-family: 'Lato', sans-serif;
 }

@@ -7,11 +7,10 @@
       <div class="media-body">
         <h4 class="media-heading">{{userInfo.login}}</h4>
         <h5>Profile URL: <span>{{userInfo.html_url}}</span></h5>
-        <hr style="margin:8px auto">
         <h6>Data One: Value One</h6>
         <h6>Data Two: Value Two</h6>
-        <button (click)="getRepoDetails(userInfo.login, i)">{{buttonname}}</button>
-        <table *ngIf="showRepoDetail== i" class="table table-striped">
+        <button (click)="getRepoDetails(userInfo.login, i)" class="btn">{{buttonname}}</button>
+        <table *ngIf="showRepoDetail== i" class="table table-hover">
           <tbody>
             <tr *ngFor="let repo of repoList">
               <td>{{repo.name}}</td>
@@ -23,4 +22,4 @@
     </div>
   </div>
 </div>
-<pagination-controls (pageChange)="pageChanged($event)" class="right-align"></pagination-controls>
+<pagination-controls (pageChange)="pageChanged($event)" class="right-align" *ngIf="userDetail"></pagination-controls>
