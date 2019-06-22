@@ -6,6 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { SharedModule } from './shared/shared.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MyInterceptor } from './interceptor';
 
 @NgModule({
   declarations: [
@@ -18,10 +22,18 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     ReactiveFormsModule,
     HttpClientModule,
     SharedModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
     
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MyInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

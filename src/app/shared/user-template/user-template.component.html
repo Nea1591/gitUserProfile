@@ -7,8 +7,7 @@
       <div class="media-body">
         <h4 class="media-heading">{{userInfo.login}}</h4>
         <h5>Profile URL: <span>{{userInfo.html_url}}</span></h5>
-        <h6>Data One: Value One</h6>
-        <h6>Data Two: Value Two</h6>
+        <h6>Score: {{userInfo.score}}</h6>
         <button (click)="getRepoDetails(userInfo.login, i)" class="btn">{{buttonname}}</button>
         <table *ngIf="showRepoDetail== i" class="table table-hover">
           <tbody>
